@@ -66,9 +66,9 @@ void variableDeclarations()
     bool doesDogPoop = true;
     bool doesDogTalk = false;
 
-    double dogWalkingDistance = 8;
-    double dogWalkingSpeed = 40;
-    double dogWeight = 50;
+    double dogWalkingDistance = 8.0;
+    double dogWalkingSpeed = 40.0;
+    double dogWeight = 50.0;
 
     float dogAltitude = 4000.20f;
     float dogAirspeed = 300.0f;
@@ -99,79 +99,84 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+
 int measureDogSize(int dogLength, int dogHeight, int dogBreadth = 0)
 {
-  ignoreUnused(dogLength, dogHeight, dogBreadth);
-  return{};
+    ignoreUnused(dogLength, dogHeight, dogBreadth);
+    return{};
 }
 /*
  2)
  */
+
 bool measureDogBuoyancy(char dogSize = 'L', int dogWeight=0, float volumeOfAirInDog = 0.0f)
 {
-  ignoreUnused(dogSize, dogWeight, volumeOfAirInDog);
-  return{};
+    ignoreUnused(dogSize, dogWeight, volumeOfAirInDog);
+   return{};
 }
 /*
  3)
  */
+
 int measureCarDurability(int carMileage = 0, bool carDamage = false)
 {
-  ignoreUnused(carMileage, carDamage);
-  return{};
+    ignoreUnused(carMileage, carDamage);
+    return{};
 }
 /*
  4)
  */
+
 void playNote(int octave = 4, char note = 'C', int length = 1, int projectTempo = 120)
 {
-  ignoreUnused(octave, note, length, projectTempo);
+    ignoreUnused(octave, note, length, projectTempo);
 }
 /*
  5)
  */
+ 
 int calculateCalories(int distanceCovered, int runningSpeed, int weight = 0)
 {
-  ignoreUnused(distanceCovered, runningSpeed, weight);
-  return{};
+    ignoreUnused(distanceCovered, runningSpeed, weight);
+    return{};
 }
 /*
  6)
  */
 int trackLocation(int xPath, int yPath)
 {
-  ignoreUnused(xPath, yPath);
-  return{};
+    ignoreUnused(xPath, yPath);
+   return{};
 }
 /*
  7)
  */
 void throwBalls(int ballDistance, int numberOfBalls=0, bool doBallsExplode = false)
 {
-  ignoreUnused(ballDistance, numberOfBalls, doBallsExplode);
+   ignoreUnused(ballDistance, numberOfBalls, doBallsExplode);
 }
 /*
  8)
  */
 void cookSpaghetti(int numberOfNoodles, int durationOfBoiling=0, bool hasSauce = false, bool hasMeatballs = false)
 {
-  ignoreUnused(numberOfNoodles, durationOfBoiling, hasSauce, hasMeatballs);
+    ignoreUnused(numberOfNoodles, durationOfBoiling, hasSauce, hasMeatballs);
 }
 /*
  9)
  */
 char observeDogFeatures(bool areEarsFloopy = false, char dogColor = 'r', char dogFurPattern = 's')
 {
-  ignoreUnused(areEarsFloopy, dogColor, dogFurPattern);
-  return{};
+   ignoreUnused(areEarsFloopy, dogColor, dogFurPattern);
+   return{};
 }
 /*
  10)
  */
 int makeCupOfCoffee(int amountPowder = 0, int amountWater = 1, int amountSugar = 0)
 { 
-  ignoreUnused(amountPowder, amountWater, amountSugar);
-  return{};
+   ignoreUnused(amountPowder, amountWater, amountSugar);
+   return{};
 }
 
 
