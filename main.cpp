@@ -107,7 +107,7 @@ int measureDogSize(int dogLength, int dogHeight, int dogBreadth = 0)
 /*
  2)
  */
-bool dogBuoyancy(char dogSize = 'L', int dogWeight=0, int volumeOfAirInDog = 0.0f)
+bool measureDogBuoyancy(char dogSize = 'L', int dogWeight=0, float volumeOfAirInDog = 0.0f)
 {
   ignoreUnused(dogSize, dogWeight, volumeOfAirInDog);
   return{};
@@ -115,7 +115,7 @@ bool dogBuoyancy(char dogSize = 'L', int dogWeight=0, int volumeOfAirInDog = 0.0
 /*
  3)
  */
-int measureCarDurability(int carMileage = 0, int carDamage = 0)
+int measureCarDurability(int carMileage = 0, bool carDamage = false)
 {
   ignoreUnused(carMileage, carDamage);
   return{};
@@ -123,11 +123,14 @@ int measureCarDurability(int carMileage = 0, int carDamage = 0)
 /*
  4)
  */
-
+void playNote(int octave = 4, char note = 'C', int length = 1, int projectTempo = 120)
+{
+  ignoreUnused(octave, note, length, projectTempo);
+}
 /*
  5)
  */
-int burnCalories(int distanceCovered, int runningSpeed, int weight = 0)
+int calculateCalories(int distanceCovered, int runningSpeed, int weight = 0)
 {
   ignoreUnused(distanceCovered, runningSpeed, weight);
   return{};
@@ -135,9 +138,9 @@ int burnCalories(int distanceCovered, int runningSpeed, int weight = 0)
 /*
  6)
  */
-bool qualityOfLife(int numberOfFriends = 0, float boredomLevel =0.0f)
+int trackLocation(int xPath, int yPath)
 {
-  ignoreUnused(numberOfFriends, boredomLevel);
+  ignoreUnused(xPath, yPath);
   return{};
 }
 /*
@@ -150,9 +153,9 @@ void throwBalls(int ballDistance, int numberOfBalls=0, bool doBallsExplode = fal
 /*
  8)
  */
-void cookSpaghetti(int numberOfNoodles, int durationOFBoiling=0)
+void cookSpaghetti(int numberOfNoodles, int durationOfBoiling=0, bool hasSauce = false, bool hasMeatballs = false)
 {
-  ignoreUnused(numberOfNoodles, durationOfBoiling);
+  ignoreUnused(numberOfNoodles, durationOfBoiling, hasSauce, hasMeatballs);
 }
 /*
  9)
@@ -165,9 +168,9 @@ char observeDogFeatures(bool areEarsFloopy = false, char dogColor = 'r', char do
 /*
  10)
  */
-char observePlaneFeatures(char size='s', int crewNumber=0, bool isMilitary = false)
-{
-  ignoreUnused(size,crewNumber,isMilitary);
+int makeCupOfCoffee(int amountPowder = 0, int amountWater = 1, int amountSugar = 0)
+{ 
+  ignoreUnused(amountPowder, amountWater, amountSugar);
   return{};
 }
 
@@ -198,27 +201,28 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1) 
-    auto dogSize = measureDogSize
+    auto dogSize = measureDogSize(20,36,10);
     //2)
-    
+    auto dogBuoyancy = measureDogBuoyancy('L',35,4.6f);
     //3)
-    
+    auto carHealth = measureCarDurability(10000, true);
     //4)
-    
+    playNote(2,'B',4,180);
     //5)
-    
+    auto caloriesBurnt = calculateCalories(10,7,86);
     //6)
-    
+    auto locationCoordinates = trackLocation(365, 142);
     //7)
-    
+    throwBalls(30, 15, true);
     //8)
-    
+    cookSpaghetti(400, 60, true, false);
     //9)
-    
+    auto dogBreedID = observeDogFeatures(true,'b','l');
     //10)
+    auto coffeeStrength = makeCupOfCoffee(70, 100, 20);
     
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, dogSize, dogBuoyancy, carHealth, caloriesBurnt, locationCoordinates, dogBreedID, coffeeStrength);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
