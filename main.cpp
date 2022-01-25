@@ -16,13 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
+ int
+ bool
+ double
+ float
+ char
+ unsigned int
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -59,10 +58,31 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
+    int dogLength = 4;
+    int dogHeight = 5;
+    int dogBreadth = 6;
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    bool isDogMale = true;
+    bool doesDogPoop = true;
+    bool doesDogTalk = false;
+
+    double dogWalkingDistance = 8.0;
+    double dogWalkingSpeed = 40.0;
+    double dogWeight = 50.0;
+
+    float dogAltitude = 4000.20f;
+    float dogAirspeed = 300.0f;
+    float dogLift = 90.12f;
+
+    char dogColour = 'R';
+    char dogSize = 'L';
+    char dogGender = 'M';
+
+    std::string dogName = "Dumbo";
+    std::string dogOwnerName = "Garren";
+    std::string dogFood = "Potatoes";
+
+    ignoreUnused(number, dogLength, dogHeight, dogBreadth, isDogMale, doesDogPoop, doesDogTalk, dogWalkingDistance, dogWalkingSpeed, dogWeight, dogAltitude, dogAirspeed, dogLift, dogColour, dogSize, dogGender); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -80,41 +100,91 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  1)
  */
 
+int measureDogSize(int dogLength, int dogHeight, int dogBreadth = 0)
+{
+    ignoreUnused(dogLength, dogHeight, dogBreadth);
+    return{};
+}
 /*
  2)
  */
 
+bool measureDogBuoyancy(char dogSize = 'L', int dogWeight=0, float volumeOfAirInDog = 0.0f)
+{
+    ignoreUnused(dogSize, dogWeight, volumeOfAirInDog);
+    return{};
+}
 /*
  3)
  */
 
+int measureCarDurability(int carMileage = 0, bool carDamage = false)
+{
+    ignoreUnused(carMileage, carDamage);
+    return{};
+}
 /*
  4)
  */
 
+void playNote(int octave = 4, char note = 'C', int length = 1, int projectTempo = 120)
+{
+    ignoreUnused(octave, note, length, projectTempo);
+}
 /*
  5)
  */
-
+ 
+int calculateCalories(int distanceCovered, int runningSpeed, int weight = 0)
+{
+    ignoreUnused(distanceCovered, runningSpeed, weight);
+    return{};
+}
 /*
  6)
  */
-
+int trackLocation(int xPath, int yPath)
+{
+    ignoreUnused(xPath, yPath);
+    return{};
+}
 /*
  7)
  */
-
+void throwBalls(int ballDistance, int numberOfBalls=0, bool doBallsExplode = false)
+{
+    ignoreUnused(ballDistance, numberOfBalls, doBallsExplode);
+}
 /*
  8)
  */
-
+void cookSpaghetti(int numberOfNoodles, int durationOfBoiling=0, bool hasSauce = false, bool hasMeatballs = false)
+{
+    ignoreUnused(numberOfNoodles, durationOfBoiling, hasSauce, hasMeatballs);
+}
 /*
  9)
  */
-
+char observeDogFeatures(bool areEarsFloopy = false, char dogColor = 'r', char dogFurPattern = 's')
+{
+    ignoreUnused(areEarsFloopy, dogColor, dogFurPattern);
+    return{};
+}
 /*
  10)
  */
+int makeCupOfCoffee(int amountPowder = 0, int amountWater = 1, int amountSugar = 0)
+{ 
+    ignoreUnused(amountPowder, amountWater, amountSugar);
+    return{};
+}
+
+
+
+
+
+
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -135,28 +205,29 @@ int main()
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
     
-    //1)
-    
+    //1) 
+    auto dogSize = measureDogSize(20,36,10);
     //2)
-    
+    auto dogBuoyancy = measureDogBuoyancy('L',35,4.6f);
     //3)
-    
+    auto carHealth = measureCarDurability(10000, true);
     //4)
-    
+    playNote(2,'B',4,180);
     //5)
-    
+    auto caloriesBurnt = calculateCalories(10,7,86);
     //6)
-    
+    auto locationCoordinates = trackLocation(365, 142);
     //7)
-    
+    throwBalls(30, 15, true);
     //8)
-    
+    cookSpaghetti(400, 60, true, false);
     //9)
-    
+    auto dogBreedID = observeDogFeatures(true,'b','l');
     //10)
+    auto coffeeStrength = makeCupOfCoffee(70, 100, 20);
     
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, dogSize, dogBuoyancy, carHealth, caloriesBurnt, locationCoordinates, dogBreedID, coffeeStrength);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
